@@ -1,1 +1,7 @@
 Manifesto
+
+Simon - test 1 
+
+Taha - test 3
+
+Tom - test 2
