@@ -18,3 +18,10 @@ Tom - test 2
       console.error('Fail: handler did not change class)
      }
    }
+   
+   
+Calender Features
+  . current date highlight
+  . focused date hightlight
+  . hover date hightlight / expand to tooltip of todos
+  . display business/no./highlightes todos per day.
