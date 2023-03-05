@@ -1,1 +1,44 @@
+/* ~ || ----- GLOBAL ------ || ~ */
 
+:root {
+  --primary-colour: yellow;
+  --secondary-colour: red;
+  --text-colour: blue;
+}
+
+/* ~ || ----- STACK ------ || ~ */
+
+.stack > * + * {
+  margin-top: 2.5rem;
+}
+
+.stack-sm > * + * {
+  margin-top: 0.4rem;
+}
+
+/* ~ || ----- FLEX ------ || ~ */
+
+.flex {
+  display: flex;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+/* ~ || ----- CENTER ------ || ~ */
+
+.center {
+  max-width: 21rem;
+  margin-inline: auto;
+}
+
+/* ~ || ----- SPECIFIC ------ || ~ */
+
+li {
+  list-style: none;
+}
+
+.week {
+  padding: 0;
+}
