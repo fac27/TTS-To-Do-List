@@ -1,1 +1,46 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> ToDo: </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <button> &lt </button>
+            <h1> ToDo: </h1>
+            <!-- ! HIDE -->
+            <button id="filter" style="display: none;"> bin </button>
+            <button id="filter"> filter </button>
+            <!-- ! HIDE -->
+            <form>
+                <input type="text" name="todo" placeholder="Type here...">
+                <select name="category">
+                    <option value="work"> Work </option>
+                    <option value="home"> Home </option>
+                </select>
+                <input type="date" name="date">
+                <input type="time" name="time">
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <!-- ? CALENDER OVERLAY (or extract to new page) -->
+        <section style="border-color: blue; border-style:
+            solid ;padding: 1em">
+            <button> &gt </button>
+            <ul class="flex space-around week">
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thur</li>
+                <li>Fri</li>
+                <li>Sat</li>
+                <li>Sun</li>
+            </ul>
+            <!-- ? INSERT GRID  -->
+        </section>
+        <button id="addItem"> + </button>
+    </body>
+</html>
