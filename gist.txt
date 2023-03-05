@@ -5,3 +5,16 @@ Simon - test 1
 Taha - test 3
 
 Tom - test 2
+  
+  test("Checking an item on a list is given a new class name to show it is complete", () => {
+    changedClass(handleComplete, '#item', '.complete') 
+  });
+  
+  function changedClass(handler, selector, class) {
+    handler(e);
+    if (document.querySelector(selector).classlist.includes(class) { 
+      console.info('Pass: handler did change class') 
+     } else {
+      console.error('Fail: handler did not change class)
+     }
+   }
