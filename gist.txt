@@ -2,6 +2,109 @@ Manifesto
 
 Simon - test 1 
 
+test("Submitting a new task adds it to the list", () => {
+  // Get the object for the values inputted and find the tag to check against the created To Do
+  
+  const inputObject = submitNewToDo();
+  const tagToTest = inputObject.tag;
+
+  // Reassign the data from the created To Do to an object in the same format as the values inputted object
+  
+  const toDoToTest = toDoContainer.querySelector(`#${tagToTest}`);
+  const iconForCategoryToTest = toDoToTest.querySelector('img');
+  const categoryToTest = iconForCategoryToTest.id;
+  const ouputObject = {
+    text: toDoToTest.querySelector(#textContent),
+    category: categoryToTest,
+    date: toDoToTest.querySelector(#date),
+    time: toDoToTest.querySelector(#time),
+    tag: toDoTest.id 
+  }
+
+  // Carry out checks\
+
+  const result = inputObject;
+  const expected = outputObject;
+  equal(result.text, expected.text);
+  equal(result.category, expected.category);
+  equal(result.date, expected.date);
+  equal(result.time, expected.time);
+  equal(result.tag, expected.tag);
+
+});
+
+// Submit button
+submitButton.addEventListener("click", submitToDo)
+
+// Submit input values to an object template
+
+function submitNewToDo() {
+  const textInput = document.getElementById("textInput");
+  const categoryInput = document.getElementById("categoryInput");
+  const dateInput = document.getElementById("dateInput");
+  const timeInput = document.getElementById("timeInput");
+  //also create variable for recurring choices
+  
+  const newToDo = Object.create(toDoTemplate);
+  newToDo.text = textInput.value;
+  newToDo.category = categoryInput.value;
+  newToDo.date = dateInput.value;
+  newToDo.time = timeInput.value;
+  newToDo.tag = generateTagNumber();
+  return newToDo
+}
+ 
+// Sure there is a way to do this without declaring a global variable but can't think of it right now! This is to keep track of To Dos
+
+let tagNumber = 0
+
+function generateTagNumber() {
+  tagNumber ++;
+  return tagNumber
+}
+
+// Create new To Do using the object and <template> element and add it do the DOM
+
+function addNewToDo() {
+  const newToDo = submitNewToDo();
+  const toDoContainer = document.querySelector('#toDoContainer');
+  const template = document.querySelector('#toDoTemplate');
+
+  const clone = template.content.cloneNode(true);
+  const textContent = clone.querySelectorAll('p');
+  p[0].textContent = newToDo.text;
+  p[1].textContent = newToDo.date;
+  p[2].textContent = newToDo.time;
+  clone.id = newToDo.tag;
+  const categoryIcon = clone.querySelector('img');
+  categoryIcon.id = newToDo.category
+  categoryIcon.src = `icons/${newToDo.category}.jpg`
+
+  toDoContainer.appendChild(clone);
+}
+
+// Object template
+
+const toDoTemplate = {
+  text: "",
+  category: "",
+  date: "",
+  time: "",
+  tag: 0
+}
+
+// HTML template for To Do elements
+
+<template id="toDoTemplate">
+  <div>
+    <input type="checkbox" id="completed" class="completed">
+    <p id="textContent" class="text-content"></p>
+    <p id="date" class="date display-none"></p>
+    <p id="time" class="time"></p>
+    <img class="category">
+  </div>
+</template>
+
 Taha - test 3
 
 Tom - test 2
@@ -12,7 +115,7 @@ Tom - test 2
   
   function changedClass(handler, selector, class) {
     handler(e);
-    if (document.querySelector(selector).classlist.includes(class) { 
+    if (document.querySelector(selector).classlist.includes(class)) { 
       console.info('Pass: handler did change class') 
      } else {
       console.error('Fail: handler did not change class)
