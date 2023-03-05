@@ -8,14 +8,18 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <section>
-            <button> &lt </button>
-            <h1> ToDo: </h1>
+        <header class="">
+            <button class="button scale arrow left"> &lt </button>
+            <h1 class="title"> Todo </h1>
+        </header>
+        <main>
             <!-- ! HIDE -->
-            <button id="filter" style="display: none;"> bin </button>
-            <button id="filter"> filter </button>
+            <button id="bin" style="display: none;"> bin </button>
+            <button id="filter" class="button small-font color-change right">
+                filter
+            </button>
             <!-- ! HIDE -->
-            <form>
+            <form style="display: none;">
                 <input type="text" name="todo" placeholder="Type here...">
                 <select name="category">
                     <option value="work"> Work </option>
@@ -25,11 +29,11 @@
                 <input type="time" name="time">
                 <input type="submit" value="Submit">
             </form>
-        </section>
+        </main>
         <!-- ? CALENDER OVERLAY (or extract to new page) -->
-        <section style="border-color: blue; border-style:
-            solid ;padding: 1em">
-            <button> &gt </button>
+        <section class="marginBlock" style="border-color: blue; border-style:
+            solid ;padding: 1em; display: none;">
+            <button class="button scale arrow right"> &gt </button>
             <ul class="flex space-around week">
                 <li>Mon</li>
                 <li>Tue</li>
@@ -39,11 +43,11 @@
                 <li>Sat</li>
                 <li>Sun</li>
             </ul>
-            <!-- ? INSERT GRID  -->
+            <!-- ? INSERT TABLE OF CALENDAR -->
         </section>
-        <button id="addItem"> + </button>
+        <button class="button addItem"> + </button>
 
-        <!--HTML template for To Do elements-->
+        <!-- ? HTML template for To Do elements-->
 
         <template id="toDoTemplate">
             <div>

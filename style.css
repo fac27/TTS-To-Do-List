@@ -2,8 +2,18 @@
 
 :root {
   --primary-colour: yellow;
-  --secondary-colour: red;
+  --secondary-colour: rgb(231, 225, 62);
   --text-colour: blue;
+  --addItem-colour: rgb(44 218 90);
+}
+
+body {
+  margin: 1.5em;
+}
+
+body * {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
 }
 
 /* ~ || ----- STACK ------ || ~ */
@@ -33,10 +43,76 @@
   margin-inline: auto;
 }
 
+/* ~ || ----- REUSE ------ || ~ */
+
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.small-font {
+  font-size: x-small;
+}
+
+.scale:hover {
+  scale: 1.4;
+}
+
+.color-change:hover {
+  color: blue;
+}
+
 /* ~ || ----- SPECIFIC ------ || ~ */
 
 li {
   list-style: none;
+  background-color: transparent;
+}
+
+#filter {
+  float: right;
+}
+
+.right {
+  right: 1rem;
+}
+
+.left {
+  left: 1rem;
+}
+
+.arrow {
+  position: fixed;
+  top: 1rem;
+}
+
+.title {
+  padding-inline-start: 1.4em;
+  padding-block-start: 4rem;
+}
+
+.marginBlock {
+  max-height: 20rem;
+  margin-block: auto;
+}
+
+.addItem {
+  position: fixed;
+  bottom: 0rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  background-color: var(--secondary-colour);
+  width: 2.5rem;
+  height: 2.5rem;
+  /* ! mystery */
+  padding-bottom: 0.2rem;
+}
+
+.addItem:hover {
+  background-color: var(--addItem-colour);
 }
 
 .week {
