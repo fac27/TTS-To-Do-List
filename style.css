@@ -1,9 +1,9 @@
 /* ~ || ----- GLOBAL ------ || ~ */
 
 :root {
-  --primary-colour: yellow;
+  --primary-colour: grey;
   --secondary-colour: rgb(231, 225, 62);
-  --text-colour: blue;
+  --text-colour: black;
   --addItem-colour: rgb(44 218 90);
 }
 
@@ -30,10 +30,27 @@ body * {
 
 .flex {
   display: flex;
+  gap: 1em;
+}
+
+.column {
+  flex-direction: column;
 }
 
 .space-around {
   justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
 }
 
 /* ~ || ----- CENTER ------ || ~ */
@@ -41,6 +58,13 @@ body * {
 .center {
   max-width: 21rem;
   margin-inline: auto;
+}
+
+.center-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ~ || ----- REUSE ------ || ~ */
@@ -66,13 +90,11 @@ body * {
 
 /* ~ || ----- SPECIFIC ------ || ~ */
 
-li {
-  list-style: none;
-  background-color: transparent;
-}
+/* * || ----- HEADER ------ || ~ */
 
-#filter {
-  float: right;
+.arrow {
+  position: fixed;
+  top: 1rem;
 }
 
 .right {
@@ -83,19 +105,48 @@ li {
   left: 1rem;
 }
 
-.arrow {
-  position: fixed;
-  top: 1rem;
+.header-container {
+  padding-inline-start: 1rem;
+  padding-block: 3rem;
 }
 
-.title {
-  padding-inline-start: 1.4em;
-  padding-block-start: 4rem;
+.header-container > * {
+  margin: 0em;
 }
 
-.marginBlock {
+/* * || ----- TODO / MAIN ------ || ~ */
+
+#filter {
+  margin-bottom: 0.1em;
+  text-decoration: underline;
+}
+
+article.empty * {
+  color: var(--primary-colour);
+}
+
+.empty > * {
+  text-align: center;
+}
+
+.category {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-block: auto;
+}
+
+.margin-block {
   max-height: 20rem;
   margin-block: auto;
+}
+
+.todo-container {
+  margin: 0.5em;
+  padding: 0%;
+}
+
+.todo-container > div #textContent {
+  margin-right: auto;
 }
 
 .addItem {
@@ -115,6 +166,32 @@ li {
   background-color: var(--addItem-colour);
 }
 
+/* * || ----- FORM ------ || ~ */
+
+#todo-form {
+  position: absolute;
+  z-index: 10;
+  max-width: 30rem;
+  padding: 2rem;
+}
+
+/* #todo-form > input[type="text"]:focus { */
+
+/* } */
+
+#todo-form > input[type="text"] {
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0.5em;
+}
+
+/* * || ----- CALENDAR / EXTRA ------ || ~ */
+
 .week {
   padding: 0;
+}
+
+#weekdays li {
+  list-style: none;
+  background-color: transparent;
 }
