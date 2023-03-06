@@ -14,21 +14,21 @@
             <h2 class=""> Wednesday 13 March </h2>
         </header>
         <main>
-            <!-- ! HIDE -->
             <nav class="flex justify-end">
+                <!-- ! HIDE (when no todo is selected) -->
                 <button id="bin" style="display: none;"> bin </button>
                 <button id="filter" class="button small-font color-change">
                     filter
                 </button>
             </nav>
-            <!-- ! HIDE -->
+            <!-- ! HIDE (when todos available)-->
             <article class="empty center-screen" style="display: block;">
                 <h2> No todos today </h2>
                 <p> add a todo by clicking the '+' icon below. </p>
             </article>
             <ul class="todo-container">
-                <!-- ~ ----- EXAMPLES -->
-                <!-- ! HIDE -->
+                <!-- ~ ----- EXAMPLES NEEDS REMOVING -->
+                <!-- ! HIDE (for demonstration of style)-->
                 <div class="flex justify-end align-center" style="display:
                     none;">
                     <input type="checkbox" id="completed" class="completed
@@ -45,16 +45,17 @@
                     <img class="category" src="images/shopping-basket.svg">
                 </div>
             </ul>
-            <!-- ! HIDE -->
+            <!-- ! HIDE (form, until opened by addButton)-->
             <form id="todo-form" class="flex column center-screen stack"
                 style="display: none">
-                <input type="text" name="todo" placeholder="Type here...">
-                <select name="category">
+                <input id="textInput" type="text" name="todo" placeholder="Type
+                    here...">
+                <select id="categoryInput" name="category">
                     <option value="work"> Work </option>
                     <option value="home"> Home </option>
                 </select>
-                <input type="date" name="date">
-                <input type="time" name="time">
+                <input id="dateInput" type="date" name="date">
+                <input id="timeInput" type="time" name="time">
                 <!-- <input type="submit" value="Submit"> -->
             </form>
         </main>
@@ -73,7 +74,7 @@
             </ul>
             <!-- ? INSERT TABLE OF CALENDAR -->
         </section>
-        <button class="button addItem"> + </button>
+        <button id="addButton" class="button addItem"> + </button>
 
         <!-- ? HTML template for To Do elements-->
 
@@ -85,6 +86,8 @@
             <!-- https://lineicons.com/icons/ -->
             <img class="category">
         </template>
-        <script src="script.js"></script>
+        <script src="./script.js" type="module"></script>
+        <script src="./handlers.js" type="module"></script>
+        <script src="./renderers.js" type="module"></script>
     </body>
 </html>
