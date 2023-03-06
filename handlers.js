@@ -4,7 +4,7 @@ import { generateTagNumber } from "./script";
 // ! if we use the same button for showingthe form and submiting the form
 // ! then we need a condition to check if the form is visible or not
 
-export function submitNewToDo() {
+export function createNewTodo() {
   // ! if (documnet.form.classlist.includes(visible) submitNewToDo())
   const textInput = document.getElementById("textInput");
   const categoryInput = document.getElementById("categoryInput");
