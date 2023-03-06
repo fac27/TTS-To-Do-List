@@ -30,6 +30,8 @@ test("Submitting a new task adds it to the list", () => {
   equal(result.tag, expected.tag);
 });
 
+// ! ====== we should also do unit tests for all individual form elemtns dont break the insert
+
 test("Checking an item on a list is given a new class name to show it is complete", () => {
   changedClass(handleComplete, "#item", ".complete");
 });
