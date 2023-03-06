@@ -1,5 +1,10 @@
 //Simon - test 1
 
+// import {} from './handlers'
+// import {} from './script'
+// import {} from './renderers'
+
+
 test("Submitting a new task adds it to the list", () => {
   // Get the object for the values inputted and find the tag to check against the created To Do
 
@@ -8,14 +13,15 @@ test("Submitting a new task adds it to the list", () => {
 
   // Reassign the data from the created To Do to an object in the same format as the values inputted object
 
-  const toDoToTest = toDoContainer.querySelector(`#${tagToTest}`);
-  const iconForCategoryToTest = toDoToTest.querySelector("img");
+
+  const toDoTest = toDoContainer.querySelector(`#${tagToTest}`);
+  const iconForCategoryToTest = toDoTest.querySelector("img");
   const categoryToTest = iconForCategoryToTest.id;
-  const ouputObject = {
-    text: toDoToTest.querySelector("#textContent"),
+  const outputObject = {
+    text: toDoTest.querySelector("#textContent"),
     category: categoryToTest,
-    date: toDoToTest.querySelector("#date"),
-    time: toDoToTest.querySelector("#time"),
+    date: toDoTest.querySelector("#date"),
+    time: toDoTest.querySelector("#time"),
     tag: toDoTest.id,
   };
 
@@ -30,11 +36,10 @@ test("Submitting a new task adds it to the list", () => {
   equal(result.tag, expected.tag);
 });
 
-// ! ====== we should also do unit tests for all individual form elemtns dont break the insert
 
 test("Checking an item on a list is given a new class name to show it is complete", () => {
   changedClass(handleComplete, "#item", ".complete");
-});
+
 
 function changedClass(handler, selector, expectedClass) {
   handler(e);
