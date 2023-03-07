@@ -6,9 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> ToDo: </title>
         <link rel="stylesheet" href="style.css">
+        <script src="./script.js" type="module"></script>
+        <script src="./handlers.js" type="module"></script>
+        <script src="./renderers.js" type="module"></script>
     </head>
     <body>
-        <button class="button scale arrow left"> &lt </button>
+        <button id="back" class="button scale arrow left"> &lt </button>
         <header class="flex column header-container">
             <h1 class=""> Todo </h1>
             <h2 class=""> Wednesday 13 March </h2>
@@ -42,15 +45,16 @@
                         13 March
                     </p>
                     <p id="time" class="time"> 13:04 </p>
-                    <img class="category" src="images/shopping-basket.svg">
+                    <img class="category" src="images/shop.svg">
                 </div>
             </ul>
             <!-- ! HIDE (form, until opened by addButton)-->
             <form id="todo-form" class="flex column center-screen stack"
                 style="display: none">
-                <input id="textInput" type="text" name="todo" placeholder="Type
-                    here...">
-                <select id="categoryInput" name="category">
+                <input id="textInput" type="text" name="todo"
+                    placeholder="Type here..." required>
+                <select id="categoryInput" name="category" required>
+                    <option value="shop"> Shop </option>
                     <option value="work"> Work </option>
                     <option value="home"> Home </option>
                 </select>
@@ -74,20 +78,19 @@
             </ul>
             <!-- ? INSERT TABLE OF CALENDAR -->
         </section>
-        <button id="addButton" class="button addItem"> + </button>
+        <button id="addButton" form="todo-form" class="button addItem"> +
+        </button>
 
         <!-- ? HTML template for To Do elements-->
 
-        <template id="toDoTemplate">
-            <input type="checkbox" id="completed" class="completed">
+        <template id="toDoTemplate" class="flex justify-end align-center">
+            <input type="checkbox" id="completed" class="completed
+                justify-start__self">
             <p id="textContent" class="text-content"></p>
             <p id="date" class="date display-none"></p>
             <p id="time" class="time"></p>
             <!-- https://lineicons.com/icons/ -->
             <img class="category">
         </template>
-        <script src="./script.js" type="module"></script>
-        <script src="./handlers.js" type="module"></script>
-        <script src="./renderers.js" type="module"></script>
     </body>
 </html>
