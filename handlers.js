@@ -1,9 +1,9 @@
-let tagNumber = 0;
+// let tagNumber = 0;
 
-function generateTagNumber() {
-  tagNumber++;
-  return tagNumber;
-}
+// function generateTagNumber() {
+//   tagNumber++;
+//   return tagNumber;
+// }
 
 export function createNewTodo() {
   // ! if (documnet.form.classlist.includes(visible) submitNewToDo())
@@ -12,13 +12,13 @@ export function createNewTodo() {
   const dateInput = document.getElementById("dateInput");
   const timeInput = document.getElementById("timeInput");
   //also create variable for recurring choices
-
+  console.log({ dateInput, timeInput, categoryInput, textInput });
   const newToDo = Object.create(toDoTemplate);
   newToDo.text = textInput.value;
   newToDo.category = categoryInput.value;
   newToDo.date = dateInput.value;
   newToDo.time = timeInput.value;
-  newToDo.tag = generateTagNumber();
+  newToDo.tag = "id" + crypto.randomUUID();
   return newToDo;
 }
 
