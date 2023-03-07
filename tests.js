@@ -37,7 +37,7 @@ test("Submitting a new task adds it to the list", () => {
     tag: todoTest.id,
   };
 
-  // Carry out checks\
+  // Carry out checks
 
   const actual = outputObject;
   const expected = inputObject;
