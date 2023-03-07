@@ -11,15 +11,15 @@ test("Submitting a new task adds it to the list", () => {
   const toDoToTest = toDoContainer.querySelector(`#${tagToTest}`);
   const iconForCategoryToTest = toDoToTest.querySelector("img");
   const categoryToTest = iconForCategoryToTest.id;
-  const ouputObject = {
+  const outputObject = {
     text: toDoToTest.querySelector("#textContent"),
     category: categoryToTest,
     date: toDoToTest.querySelector("#date"),
     time: toDoToTest.querySelector("#time"),
-    tag: toDoTest.id,
+    tag: toDoToTest.id,
   };
 
-  // Carry out checks\
+  // Carry out checks
 
   const result = inputObject;
   const expected = outputObject;
