@@ -1,8 +1,9 @@
-import { generateTagNumber } from "./script";
+let tagNumber = 0;
 
-// Submit input values to an object template
-// ! if we use the same button for showingthe form and submiting the form
-// ! then we need a condition to check if the form is visible or not
+function generateTagNumber() {
+  tagNumber++;
+  return tagNumber;
+}
 
 export function createNewTodo() {
   // ! if (documnet.form.classlist.includes(visible) submitNewToDo())
@@ -20,6 +21,15 @@ export function createNewTodo() {
   newToDo.tag = generateTagNumber();
   return newToDo;
 }
+
+// Object template
+const toDoTemplate = {
+  text: "",
+  category: "",
+  date: "",
+  time: "",
+  tag: 0,
+};
 
 export function removeTodo(event) {
   event.target.parentElement.remove();
