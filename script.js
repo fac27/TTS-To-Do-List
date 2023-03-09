@@ -1,3 +1,4 @@
+import { getFilterMenuOption } from "./handlers";
 import { removeTodo } from "/handlers.js";
 import { addTodo } from "/renderers.js";
 
@@ -29,3 +30,11 @@ function removeForm() {
 }
 
 export { removeForm };
+
+export function filterToDos() {
+  const filterSelected = getFilterMenuOption();
+  console.log(filterSelected)
+  if(filterSelected === "shop") {
+    
+  }
+}

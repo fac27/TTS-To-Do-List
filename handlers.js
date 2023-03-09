@@ -45,3 +45,8 @@ const toDoTemplate = {
 export function removeTodo(event) {
   event.target.parentElement.remove();
 }
+
+export function getFilterMenuOption {
+  const filterDropdown = document.getElementById("filterDropdown");
+  return filterDropdown.value;
+}
