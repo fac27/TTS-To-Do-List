@@ -45,3 +45,9 @@ const toDoTemplate = {
 export function removeTodo(event) {
   event.target.parentElement.remove();
 }
+
+export function handleCheck(e) {
+  //changes todo element style when checked
+  const todo = e.target.parentElement;
+  todo.classList.toggle('completed');
+}
