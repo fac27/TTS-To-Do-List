@@ -4,6 +4,8 @@ import { addTodo } from "/renderers.js";
 document.querySelector("#addButton").addEventListener("click", showForm);
 document.querySelector("#bin").addEventListener("click", removeTodo);
 document.querySelector("#back").addEventListener("click", removeForm);
+const sources = document.querySelectorAll("#todo-container > *");
+sources.addEventListener("drag", (event) => console.log(event));
 
 // save todos to local storage, call after renderer to addTodo
 function saveToStorage(todos) {

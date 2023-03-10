@@ -19,7 +19,8 @@
         <main>
             <nav class="flex justify-end">
                 <!-- ! HIDE (when no todo is selected) -->
-                <button id="bin" style="display: none;"> bin </button>
+                <p id="bin" class="button small-font color-change"> bin
+                </p>
                 <button id="filter" class="button small-font color-change">
                     filter
                 </button>
@@ -30,23 +31,6 @@
                 <p> add a todo by clicking the '+' icon below. </p>
             </article>
             <ul class="todo-container">
-                <!-- ~ ----- EXAMPLES NEEDS REMOVING -->
-                <!-- ! HIDE (for demonstration of style)-->
-                <div class="flex justify-end align-center" style="display:
-                    none;">
-                    <input type="checkbox" id="completed" class="completed
-                        justify-start__self">
-                    <p id="textContent" class="text-content"
-                        style="text-decoration: line-through;"> I need to go
-                        shopping
-                    </p>
-                    <!-- ? only on larger form factor -->
-                    <p id="date" class="date" style="display: none;"> Wednesday
-                        13 March
-                    </p>
-                    <p id="time" class="time"> 13:04 </p>
-                    <img class="category" src="images/shop.svg">
-                </div>
             </ul>
             <!-- ! HIDE (form, until opened by addButton)-->
             <form id="todo-form" class="flex column center-screen stack"
