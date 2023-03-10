@@ -166,6 +166,11 @@ article.empty * {
   background-color: var(--addItem-colour);
 }
 
+.completed {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
 /* * || ----- FORM ------ || ~ */
 
 #todo-form {

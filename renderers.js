@@ -1,4 +1,4 @@
-import { createNewTodo } from "/handlers.js";
+import { createNewTodo, handleCheck } from "/handlers.js";
 import { removeForm } from "/script.js";
 // Create new To Do using the object and <template> element and add it do the DOM
 
@@ -13,7 +13,10 @@ export function addTodo() {
   const template = document.querySelector("#toDoTemplate");
   const textContent = clone.querySelectorAll("p");
   const categoryIcon = clone.querySelector("img");
-
+  const checkBox = clone.querySelector('input');
+  checkBox.addEventListener('change', handleCheck);
+  clone.id = newToDo.tag;
+  
   const clone = template.content.cloneNode(true);
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
@@ -27,3 +30,5 @@ export function addTodo() {
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
 }
+
+
