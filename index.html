@@ -19,7 +19,7 @@
         <main>
             <nav class="flex justify-end">
                 <!-- ! HIDE (when no todo is selected) -->
-                <p id="bin" class="button small-font color-change"> bin
+                <p id="bin" class="dropzone button small-font color-change"> bin
                 </p>
                 <button id="filter" class="button small-font color-change">
                     filter
@@ -42,8 +42,10 @@
                     <option value="work"> Work </option>
                     <option value="home"> Home </option>
                 </select>
-                <input id="dateInput" type="date" name="date">
-                <input id="timeInput" type="time" name="time">
+                <!-- * default values for testing -->
+                <input id="dateInput" type="date" name="date"
+                    value="2014-02-09">
+                <input id="timeInput" type="time" name="time" value="12:00">
                 <!-- <input type="submit" value="Submit"> -->
             </form>
         </main>
@@ -70,7 +72,7 @@
         <!-- ? HTML template for To Do elements-->
 
         <template id="toDoTemplate">
-            <div class="flex justify-end align-center">
+            <div class="flex justify-end align-center" draggable="true">
                 <input type="checkbox" id="completed" class="completed
                     justify-start__self">
                 <p id="textContent" class="text-content"></p>

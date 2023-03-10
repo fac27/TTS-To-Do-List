@@ -2,6 +2,8 @@ import { createNewTodo, handleCheck } from "/handlers.js";
 import { removeForm } from "/script.js";
 // Create new To Do using the object and <template> element and add it do the DOM
 
+let dragged;
+
 export function addTodo() {
   // remove filler if its visible
   const fillerElement = document.querySelector(".empty");
@@ -20,6 +22,7 @@ export function addTodo() {
   checkBox.addEventListener("change", handleCheck);
 
   clone.id = newToDo.tag;
+  // clone.setAttribute("draggable", "true");
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
   textContent[1].innerText = newToDo.date;
@@ -31,4 +34,47 @@ export function addTodo() {
 
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
+
+  drag(newToDo.tag);
+}
+
+function drag(tag) {
+  const source = document.getElementById(`${tag}`);
+  const target = document.getElementById("bin");
+
+  source.addEventListener("dragstart", (event) => {
+    console.log(event);
+    dragged = event.target;
+    target.classList.add("waiting");
+    event.target.classList.add("dragging");
+  });
+  source.addEventListener("dragend", (event) => {
+    event.target.classList.remove("dragging");
+    target.classList.remove("waiting");
+  });
+
+  target.addEventListener(
+    "dragover",
+    (event) => {
+      event.preventDefault();
+    },
+    false
+  );
+  target.addEventListener("dragenter", (event) => {
+    if (event.target.classList.contains("dropzone")) {
+      event.target.classList.add("dragover");
+    }
+  });
+  target.addEventListener("dragleave", (event) => {
+    if (event.target.classList.contains("dropzone")) {
+      event.target.classList.remove("dragover");
+    }
+  });
+  target.addEventListener("drop", (event) => {
+    event.preventDefault();
+    if (event.target.classList.contains("dropzone")) {
+      event.target.classList.remove("dragover");
+      dragged.remove();
+    }
+  });
 }
