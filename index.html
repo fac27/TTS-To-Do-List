@@ -23,7 +23,7 @@
                 <button id="filter" class="button small-font color-change">
                     filter
                 </button>
-                <select class="dropdown" id="filterDropdown">
+                <select class="dropdown display-none" id="filterDropdown">
                     <option value=""></option>
                     <option value="shop" id="shopFilter">Shop</option>
                     <option value="work" id="workFilter">Work</option>
@@ -62,7 +62,7 @@
                 <select id="categoryInput" name="category" required>
                     <option value="shop"> Shop </option>
                     <option value="work"> Work </option>
-                    <option value="home"> Home </option>
+                    <option value="home">  Home </option>
                 </select>
                 <input id="dateInput" type="date" name="date">
                 <input id="timeInput" type="time" name="time">
@@ -93,6 +93,7 @@
             <input type="checkbox" id="completed" class="completed
                 justify-start__self">
             <p id="textContent" class="text-content"></p>
+            <p id="category" class="category display-none"></p>
             <p id="date" class="date display-none"></p>
             <p id="time" class="time"></p>
             <!-- https://lineicons.com/icons/ -->

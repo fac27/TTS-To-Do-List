@@ -19,8 +19,9 @@ export function addTodo(e) {
   const clone = template.content.cloneNode(true);
   const textContent = clone.querySelectorAll("p");
   textContent[0].textContent = newToDo.text;
-  textContent[1].textContent = newToDo.date;
-  textContent[2].textContent = newToDo.time;
+  textContent[1].textContent = newToDo.category;
+  textContent[2].textContent = newToDo.date;
+  textContent[3].textContent = newToDo.time;
   clone.id = newToDo.tag;
   const categoryIcon = clone.querySelector("img");
   categoryIcon.id = newToDo.category;
@@ -30,4 +31,11 @@ export function addTodo(e) {
   toDoContainer.appendChild(container);
 
   removeForm();
+}
+
+document.getElementById("filter").addEventListener("click", toggleFilterVisibility)
+
+export function toggleFilterVisibility() {
+  const filterDropdown = document.getElementById("filterDropdown");
+  filterDropdown.classList.toggle("display-none")
 }
