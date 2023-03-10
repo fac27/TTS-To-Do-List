@@ -11,13 +11,15 @@ export function addTodo() {
   const newToDo = createNewTodo();
   const toDoContainer = document.querySelector(".todo-container");
   const template = document.querySelector("#toDoTemplate");
+
+  const clone = template.content.cloneNode(true);
   const textContent = clone.querySelectorAll("p");
   const categoryIcon = clone.querySelector("img");
-  const checkBox = clone.querySelector('input');
-  checkBox.addEventListener('change', handleCheck);
+
+  const checkBox = clone.querySelector("input");
+  checkBox.addEventListener("change", handleCheck);
+
   clone.id = newToDo.tag;
-  
-  const clone = template.content.cloneNode(true);
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
   textContent[1].innerText = newToDo.date;
@@ -30,5 +32,3 @@ export function addTodo() {
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
 }
-
-
