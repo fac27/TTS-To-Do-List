@@ -1,9 +1,9 @@
-let tagNumber = 0;
+// let tagNumber = 0;
 
-function generateTagNumber() {
-  tagNumber++;
-  return tagNumber;
-}
+// function generateTagNumber() {
+//   tagNumber++;
+//   return tagNumber;
+// }
 
 export function createNewTodo() {
   //create variables for each form field
@@ -20,13 +20,13 @@ export function createNewTodo() {
     (dateInput.value.replace(/[^0-9]/g,"").length) >= 8 && 
     (timeInput.value.replace(/[^0-9]/g,"").length) >= 4)
   {
-  //add values to object
+    //add values to object
     const newToDo = Object.create(toDoTemplate);
     newToDo.text = textInput.value;
     newToDo.category = categoryInput.value;
     newToDo.date = dateInput.value;
     newToDo.time = timeInput.value;
-    newToDo.tag = generateTagNumber();
+    newToDo.tag = "id" + crypto.randomUUID();
     return newToDo;
   }
   // if form entries are not valid

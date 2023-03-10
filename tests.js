@@ -1,33 +1,53 @@
+import { createNewTodo } from "/handlers.js";
+import { test, equal } from "./test-helpers.js";
 //Simon - test 1
 
 test("Submitting a new task adds it to the list", () => {
   // Get the object for the values inputted and find the tag to check against the created To Do
+  const inputObject = {
+    text: "hello",
+    category: "shop",
+    date: "2023-02-03",
+    time: "21:32",
+    tag: "",
+  };
 
-  const inputObject = submitNewToDo();
-  const tagToTest = inputObject.tag;
+  document.querySelector("#addButton").click();
+
+  document.getElementById("textInput").value = inputObject.text;
+  document.getElementById("categoryInput").value = inputObject.category;
+  document.getElementById("dateInput").value = inputObject.date;
+  document.getElementById("timeInput").value = inputObject.time;
+
+  document.querySelector("#addButton").click();
+
+  const tagToTest = document.querySelector("#most-recent-tag").innerText;
+  inputObject.tag = tagToTest;
 
   // Reassign the data from the created To Do to an object in the same format as the values inputted object
 
-  const toDoToTest = toDoContainer.querySelector(`#${tagToTest}`);
-  const iconForCategoryToTest = toDoToTest.querySelector("img");
+  const todoTest = document.querySelector(`#${tagToTest}`);
+  const iconForCategoryToTest = todoTest.querySelector("img");
   const categoryToTest = iconForCategoryToTest.id;
   const outputObject = {
-    text: toDoToTest.querySelector("#textContent"),
+    text: todoTest.querySelector("#textContent").innerText,
     category: categoryToTest,
-    date: toDoToTest.querySelector("#date"),
-    time: toDoToTest.querySelector("#time"),
-    tag: toDoToTest.id,
+    date: todoTest.querySelector("#date").innerText,
+    time: todoTest.querySelector("#time").innerText,
+    tag: todoTest.id,
   };
 
   // Carry out checks
 
-  const result = inputObject;
-  const expected = outputObject;
-  equal(result.text, expected.text);
-  equal(result.category, expected.category);
-  equal(result.date, expected.date);
-  equal(result.time, expected.time);
-  equal(result.tag, expected.tag);
+  const actual = outputObject;
+  const expected = inputObject;
+  equal(actual.text, expected.text);
+  equal(actual.category, expected.category);
+  equal(actual.date, expected.date);
+  equal(actual.time, expected.time);
+  equal(actual.tag, expected.tag);
+
+  document.querySelector(`#todo-form`).reset();
 });
 
 // ! ====== redundant tests.
