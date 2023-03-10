@@ -64,16 +64,23 @@
         </section>
         <button id="addButton" form="todo-form" class="button addItem"> +
         </button>
-
+        <div id='most-recent-tag' style="display: none;"> Newly added todo id
+            goes here.
+            For reference </div>
         <!-- ? HTML template for To Do elements-->
 
-        <template id="toDoTemplate" class="flex justify-end align-center">
-            <input type="checkbox" id="" class="justify-start__self">
-            <p id="textContent" class="text-content"></p>
-            <p id="date" class="date display-none"></p>
-            <p id="time" class="time"></p>
-            <!-- https://lineicons.com/icons/ -->
-            <img class="category">
+        <template id="toDoTemplate">
+            <div class="flex justify-end align-center">
+                <input type="checkbox" id="completed" class="completed
+                    justify-start__self">
+                <p id="textContent" class="text-content"></p>
+                <p id="date" class="date"></p>
+                <p id="time" class="time"></p>
+                <!-- https://lineicons.com/icons/ -->
+                <img class="category">
+            </div>
+
         </template>
+        <!-- <script src="tests.js" type="module"></script> -->
     </body>
 </html>
