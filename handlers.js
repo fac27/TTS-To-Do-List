@@ -50,7 +50,7 @@ export function removeTodo(event) {
 export function getFilterMenuOption() {
   const filterDropdown = document.getElementById("filterDropdown");
   return filterDropdown.value;
-
+}
 export function handleCheck(e) {
   //changes todo element style when checked
   const todo = e.target.parentElement;
