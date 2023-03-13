@@ -23,6 +23,12 @@
                 <button id="filter" class="button small-font color-change">
                     filter
                 </button>
+                <select class="dropdown display-none" id="filterDropdown">
+                    <option value=""></option>
+                    <option value="shop" id="shopFilter">Shop</option>
+                    <option value="work" id="workFilter">Work</option>
+                    <option value="home" id="homeFilter">Home</option>
+                </select>
             </nav>
             <!-- ! HIDE (when todos available)-->
             <article class="empty center-screen" style="display: block;">
@@ -56,7 +62,7 @@
                 <select id="categoryInput" name="category" required>
                     <option value="shop"> Shop </option>
                     <option value="work"> Work </option>
-                    <option value="home"> Home </option>
+                    <option value="home">  Home </option>
                 </select>
                 <input id="dateInput" type="date" name="date">
                 <input id="timeInput" type="time" name="time">
@@ -85,17 +91,16 @@
             For reference </div>
         <!-- ? HTML template for To Do elements-->
 
-        <template id="toDoTemplate">
-            <div class="flex justify-end align-center">
-                <input type="checkbox" id="completed" class="completed
-                    justify-start__self">
-                <p id="textContent" class="text-content"></p>
-                <p id="date" class="date"></p>
-                <p id="time" class="time"></p>
-                <!-- https://lineicons.com/icons/ -->
-                <img class="category">
-            </div>
 
+        <template id="toDoTemplate" class="flex justify-end align-center">
+            <input type="checkbox" id="completed" class="completed
+                justify-start__self">
+            <p id="textContent" class="text-content"></p>
+            <p id="category" class="category display-none"></p>
+            <p id="date" class="date display-none"></p>
+            <p id="time" class="time"></p>
+            <!-- https://lineicons.com/icons/ -->
+            <img class="category">
         </template>
         <!-- <script src="tests.js" type="module"></script> -->
     </body>
