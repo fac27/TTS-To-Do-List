@@ -8,6 +8,12 @@ document.querySelector("#back").addEventListener("click", removeForm);
 const dropdownMenu = document.getElementById("filterDropdown");
 dropdownMenu.addEventListener("change", filterToDos);
 
+const sources = document.querySelectorAll("#todo-container > *");
+console.log(sources);
+sources.forEach((element) => {
+  element.addEventListener("drag", (event) => console.log(event));
+});
+
 // save todos to local storage, call after renderer to addTodo
 function saveToStorage(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -19,6 +25,7 @@ function showForm(event) {
   const formElement = document.querySelector("#todo-form");
   if (formElement.style.display === "none") {
     formElement.style.display = "flex";
+    document.querySelector("#textInput").focus();
   } else {
     addTodo(event);
   }

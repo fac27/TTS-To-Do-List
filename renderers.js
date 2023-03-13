@@ -2,6 +2,8 @@ import { createNewTodo, handleCheck } from "/handlers.js";
 import { removeForm } from "/script.js";
 // Create new To Do using the object and <template> element and add it do the DOM
 
+let dragged;
+
 export function addTodo() {
   // remove filler if its visible
   const fillerElement = document.querySelector(".empty");
@@ -21,11 +23,11 @@ export function addTodo() {
   clone.id = newToDo.tag;
 
   const categoryIcon = clone.querySelector("img");
-  const checkBox = clone.querySelector('input');
-  checkBox.addEventListener('change', handleCheck);
-  clone.id = newToDo.tag;
-  
-  
+
+  const checkBox = clone.querySelector("input");
+  checkBox.addEventListener("change", handleCheck);
+
+  clone.id = newToDo.tag;  
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
   textContent[1].innerText = newToDo.date;
@@ -37,13 +39,56 @@ export function addTodo() {
 
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
+
+  drag(newToDo.tag);
 }
 
+function drag(tag) {
+  const source = document.getElementById(`${tag}`);
+  const target = document.getElementById("bin");
 
-document.getElementById("filter").addEventListener("click", toggleFilterVisibility)
+  source.addEventListener("dragstart", (event) => {
+    console.log(event);
+    dragged = event.target;
+    target.classList.add("waiting");
+    event.target.classList.add("dragging");
+  });
+  source.addEventListener("dragend", (event) => {
+    event.target.classList.remove("dragging");
+    target.classList.remove("waiting");
+  });
+
+  target.addEventListener(
+    "dragover",
+    (event) => {
+      event.preventDefault();
+    },
+    false
+  );
+  target.addEventListener("dragenter", (event) => {
+    if (event.target.classList.contains("dropzone")) {
+      event.target.classList.add("dragover");
+    }
+  });
+  target.addEventListener("dragleave", (event) => {
+    if (event.target.classList.contains("dropzone")) {
+      event.target.classList.remove("dragover");
+    }
+  });
+  target.addEventListener("drop", (event) => {
+    event.preventDefault();
+    if (event.target.classList.contains("dropzone")) {
+      event.target.classList.remove("dragover");
+      dragged.remove();
+    }
+  });
+}
+
+document
+  .getElementById("filter")
+  .addEventListener("click", toggleFilterVisibility);
 
 export function toggleFilterVisibility() {
   const filterDropdown = document.getElementById("filterDropdown");
-  filterDropdown.classList.toggle("display-none")
+  filterDropdown.classList.toggle("display-none");
 }
-

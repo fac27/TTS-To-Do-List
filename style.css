@@ -67,6 +67,20 @@ body * {
   transform: translate(-50%, -50%);
 }
 
+/* ~ || ----- DRAG ------ || ~ */
+
+.waiting {
+  color: red;
+}
+
+.dropzone.dragover {
+  scale: 1.5;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
 /* ~ || ----- REUSE ------ || ~ */
 
 .display-none {
