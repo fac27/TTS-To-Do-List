@@ -24,6 +24,12 @@
                 <button id="filter" class="button small-font color-change">
                     filter
                 </button>
+                <select class="dropdown display-none" id="filterDropdown">
+                    <option value=""></option>
+                    <option value="shop" id="shopFilter">Shop</option>
+                    <option value="work" id="workFilter">Work</option>
+                    <option value="home" id="homeFilter">Home</option>
+                </select>
             </nav>
             <!-- ! HIDE (when todos available)-->
             <article class="empty center-screen" style="display: block;">
@@ -40,7 +46,7 @@
                 <select id="categoryInput" name="category" required>
                     <option value="shop"> Shop </option>
                     <option value="work"> Work </option>
-                    <option value="home"> Home </option>
+                    <option value="home">  Home </option>
                 </select>
                 <!-- * default values for testing -->
                 <input id="dateInput" type="date" name="date"
@@ -82,7 +88,6 @@
                 <img class="category">
             </div>
 
-        </template>
         <!-- <script src="tests.js" type="module"></script> -->
     </body>
 </html>

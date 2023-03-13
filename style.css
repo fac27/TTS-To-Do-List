@@ -83,6 +83,10 @@ body * {
 
 /* ~ || ----- REUSE ------ || ~ */
 
+.display-none {
+  display: none;
+}
+
 .button {
   border: none;
   background: none;
