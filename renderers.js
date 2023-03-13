@@ -86,10 +86,11 @@ function drag(tag) {
   });
 }
 
-document.getElementById("filter").addEventListener("click", toggleFilterVisibility)
+document
+  .getElementById("filter")
+  .addEventListener("click", toggleFilterVisibility);
 
 export function toggleFilterVisibility() {
   const filterDropdown = document.getElementById("filterDropdown");
-  filterDropdown.classList.toggle("display-none")
+  filterDropdown.classList.toggle("display-none");
 }
-
