@@ -42,6 +42,7 @@ export function addTodo() {
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
 
+  // init drag event listeners
   drag(newToDo.tag);
 }
 

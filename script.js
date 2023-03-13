@@ -1,6 +1,10 @@
 import { getFilterMenuOption } from "/handlers.js";
 import { removeTodo } from "/handlers.js";
 import { addTodo } from "/renderers.js";
+import createTodoTest from "/tests.js";
+
+// if (confirm("Run tests?"))
+createTodoTest();
 
 document.querySelector("#addButton").addEventListener("click", showForm);
 document.querySelector("#bin").addEventListener("click", removeTodo);
