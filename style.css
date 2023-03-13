@@ -178,6 +178,9 @@ article.empty * {
   z-index: 10;
   max-width: 30rem;
   padding: 2rem;
+  background-color: white;
+  box-shadow: 2px 3px 10px rgb(208, 208, 208);
+  border-radius: 1%;
 }
 
 /* #todo-form > input[type="text"]:focus { */
