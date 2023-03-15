@@ -1,5 +1,5 @@
-import { createNewTodo } from "./handlers.js";
-import { test, equal } from "./test-helpers.js";
+import { createNewTodo } from "/handlers.js";
+import { test, equal } from "/test-helpers.js";
 //Simon - test 1
 
 const createTodoTest = () =>
