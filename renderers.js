@@ -9,11 +9,10 @@ export function addTodo() {
   const fillerElement = document.querySelector(".empty");
   if (fillerElement.style.display == "block")
     fillerElement.style.display = "none";
-
+    
   const newToDo = createNewTodo();
   const toDoContainer = document.querySelector(".todo-container");
   const template = document.querySelector("#toDoTemplate");
-
   const clone = template.content.cloneNode(true);
   const textContent = clone.querySelectorAll("p");
 
@@ -28,8 +27,7 @@ export function addTodo() {
   const checkBox = clone.querySelector("input");
   checkBox.addEventListener("change", handleCheck);
 
-  clone.id = newToDo.tag;
-  // clone.setAttribute("draggable", "true");
+  clone.id = newToDo.tag;  
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
   textContent[1].innerText = newToDo.date;

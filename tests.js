@@ -1,3 +1,4 @@
+import { createNewTodo } from "./handlers.js";
 import { test, equal } from "./test-helpers.js";
 //Simon - test 1
 
@@ -12,16 +13,20 @@ const createTodoTest = () =>
       tag: "",
     };
 
-    const add = document.querySelector("#addButton");
+    const add = document.getElementById("addButton");
+    add.addEventListener("onclick", (e) => e.preventDefault);
     add.click();
+
+    console.log(document.getElementById("textInput").value);
+    debugger;
 
     document.getElementById("textInput").value = inputObject.text;
     document.getElementById("categoryInput").value = inputObject.category;
     document.getElementById("dateInput").value = inputObject.date;
     document.getElementById("timeInput").value = inputObject.time;
 
-    document.querySelector("#addButton").click();
-
+    add.click();
+    add.removeEventListener();
     const tagToTest = document.querySelector("#most-recent-tag").innerText;
     inputObject.tag = tagToTest;
 
@@ -86,4 +91,6 @@ const testFilter = () =>
     // test goes here
   });
 
-export default createTodoTest;
+// createTodoTest();
+
+export { createTodoTest };
