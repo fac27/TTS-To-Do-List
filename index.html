@@ -41,7 +41,7 @@
             <!-- ! HIDE (form, until opened by addButton)-->
             <form id="todo-form" class="flex column center-screen stack"
                 style="display: none">
-                <input id="textInput" type="text" name="todo"
+                <input id="textInput" type="text" name="text"
                     placeholder="Type here..." required>
                 <select id="categoryInput" name="category" required>
                     <option value="shop"> Shop </option>
@@ -70,7 +70,8 @@
             </ul>
             <!-- ? INSERT TABLE OF CALENDAR -->
         </section>
-        <button id="addButton" form="todo-form" class="button addItem"> +
+        <button id="addButton" form="todo-form" class="button
+            addItem"> +
         </button>
         <div id='most-recent-tag' style="display: none;"> Newly added todo id
             goes here.

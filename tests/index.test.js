@@ -14,11 +14,10 @@ const createTodoTest = () =>
     };
 
     const add = document.getElementById("addButton");
-    add.addEventListener("onclick", (e) => e.preventDefault);
+    // add.addEventListener("onclick", (e) => e.preventDefault);
     add.click();
 
     console.log(document.getElementById("textInput").value);
-    debugger;
 
     document.getElementById("textInput").value = inputObject.text;
     document.getElementById("categoryInput").value = inputObject.category;
@@ -26,8 +25,8 @@ const createTodoTest = () =>
     document.getElementById("timeInput").value = inputObject.time;
 
     add.click();
-    add.removeEventListener();
     const tagToTest = document.querySelector("#most-recent-tag").innerText;
+    console.log("continue");
     inputObject.tag = tagToTest;
 
     // Reassign the data from the created To Do to an object in the same format as the values inputted object
@@ -54,8 +53,8 @@ const createTodoTest = () =>
 
     document.querySelector(`#todo-form`).reset();
 
-    // testChecked(todoTest);
-    // testDelete(todoTest);
+    testChecked(todoTest);
+    testDelete(todoTest);
   });
 
 const testDelete = (element) =>

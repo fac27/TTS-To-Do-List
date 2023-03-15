@@ -3,8 +3,6 @@ import { removeTodo } from "./handlers.js";
 import { addTodo } from "./renderers.js";
 import { createTodoTest } from "./tests/index.test.js";
 
-if (confirm("Run tests?")) createTodoTest();
-
 document.querySelector("#addButton").addEventListener("click", showForm);
 document.querySelector("#bin").addEventListener("click", removeTodo);
 document.querySelector("#back").addEventListener("click", removeForm);
@@ -25,6 +23,7 @@ function saveToStorage(todos) {
 function showForm(event) {
   // this stops checkign required fields
   event.preventDefault();
+  console.log("click start");
   const formElement = document.querySelector("#todo-form");
   if (formElement.style.display === "none") {
     formElement.style.display = "flex";
@@ -32,6 +31,7 @@ function showForm(event) {
   } else {
     addTodo(event);
   }
+  console.log("click finish");
 }
 
 function removeForm() {
@@ -56,3 +56,10 @@ export function filterToDos() {
     }
   });
 }
+
+if (location.href.includes("test")) {
+  createTodoTest();
+} else if (confirm("Run tests?")) {
+  createTodoTest();
+}
+console.log(location.href.includes("test"));
