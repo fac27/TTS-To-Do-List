@@ -2,6 +2,10 @@
 
 This is a simple to-do list project created using HTML, CSS, and JavaScript. With lots of testing to ensure our end user experience is breazy 😸
 
+# About
+
+This is a project for the FAC pre-apprenticeship bootcamp. The brief is to develop a todo list app using a test driven development methodology.
+
 ## :atom:  Features
 
 - Add new tasks to the list
