@@ -32,8 +32,9 @@ export function addTodo() {
   clone.id = newToDo.tag;  
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
-  textContent[1].innerText = newToDo.date;
-  textContent[2].innerText = newToDo.time;
+  textContent[1].innerText = newToDo.category;
+  textContent[2].innerText = newToDo.date;
+  textContent[3].innerText = newToDo.time;
   categoryIcon.setAttribute("id", newToDo.category);
   categoryIcon.src = `images/${newToDo.category}.svg`;
 
