@@ -15,11 +15,12 @@ export function createNewTodo() {
   //also create variable for recurring choices
 
   //form validation
-  if(textInput.value.length > 0 && 
-    categoryInput.value.length > 0 && 
-    (dateInput.value.replace(/[^0-9]/g,"").length) >= 8 && 
-    (timeInput.value.replace(/[^0-9]/g,"").length) >= 4)
-  {
+  if (
+    textInput.value.length > 0 &&
+    categoryInput.value.length > 0 &&
+    dateInput.value.replace(/[^0-9]/g, "").length >= 8 &&
+    timeInput.value.replace(/[^0-9]/g, "").length >= 4
+  ) {
     //add values to object
     const newToDo = Object.create(toDoTemplate);
     newToDo.text = textInput.value;
@@ -30,7 +31,9 @@ export function createNewTodo() {
     return newToDo;
   }
   // if form entries are not valid
-  else {window.alert("Please enter all fields")}
+  else {
+    window.alert("Please enter all fields");
+  }
 }
 
 // Object template
@@ -46,7 +49,6 @@ export function removeTodo(event) {
   event.target.parentElement.remove();
 }
 
-
 export function getFilterMenuOption() {
   const filterDropdown = document.getElementById("filterDropdown");
   return filterDropdown.value;
@@ -54,5 +56,5 @@ export function getFilterMenuOption() {
 export function handleCheck(e) {
   //changes todo element style when checked
   const todo = e.target.parentElement;
-  todo.classList.toggle('completed');
+  todo.classList.toggle("completed");
 }

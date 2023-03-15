@@ -1,5 +1,5 @@
-import { createNewTodo, handleCheck } from "/handlers.js";
-import { removeForm } from "/script.js";
+import { createNewTodo, handleCheck } from "./handlers.js";
+import { removeForm } from "./script.js";
 // Create new To Do using the object and <template> element and add it do the DOM
 
 let dragged;
@@ -9,7 +9,7 @@ export function addTodo() {
   const fillerElement = document.querySelector(".empty");
   if (fillerElement.style.display == "block")
     fillerElement.style.display = "none";
-    
+
   const newToDo = createNewTodo();
   const toDoContainer = document.querySelector(".todo-container");
   const template = document.querySelector("#toDoTemplate");
@@ -17,19 +17,16 @@ export function addTodo() {
   const textContent = clone.querySelectorAll("p");
   const checkBox = clone.querySelector("input");
   const categoryIcon = clone.querySelector("img");
-  
+
   textContent[0].textContent = newToDo.text;
   textContent[1].textContent = newToDo.category;
   textContent[2].textContent = newToDo.date;
   textContent[3].textContent = newToDo.time;
   clone.id = newToDo.tag;
 
-  
-
-  
   checkBox.addEventListener("change", handleCheck);
 
-  clone.id = newToDo.tag;  
+  clone.id = newToDo.tag;
   clone.childNodes[1].id = newToDo.tag;
   textContent[0].innerText = newToDo.text;
   textContent[1].innerText = newToDo.category;
@@ -43,6 +40,7 @@ export function addTodo() {
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
 
+  // init drag event listeners
   drag(newToDo.tag);
 }
 
