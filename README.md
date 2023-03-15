@@ -17,9 +17,7 @@ git clone https://github.com/fac27/TTS-To-Do-List/
 ```
 2. Launch the site using the [vscode liveserver extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-// 
-
-[fac27.github.io/Weather-TM](https://fac27.github.io/Weather-TM/)
+//
 
 ---
 ### 🧰 Other helpful VSCode extensions Used
