@@ -15,16 +15,18 @@ export function addTodo() {
   const template = document.querySelector("#toDoTemplate");
   const clone = template.content.cloneNode(true);
   const textContent = clone.querySelectorAll("p");
-
+  const checkBox = clone.querySelector("input");
+  const categoryIcon = clone.querySelector("img");
+  
   textContent[0].textContent = newToDo.text;
   textContent[1].textContent = newToDo.category;
   textContent[2].textContent = newToDo.date;
   textContent[3].textContent = newToDo.time;
   clone.id = newToDo.tag;
 
-  const categoryIcon = clone.querySelector("img");
+  
 
-  const checkBox = clone.querySelector("input");
+  
   checkBox.addEventListener("change", handleCheck);
 
   clone.id = newToDo.tag;  
