@@ -39,6 +39,7 @@ export function addTodo() {
 
   toDoContainer.appendChild(clone);
 
+  console.log(newToDo.tag);
   document.querySelector("#most-recent-tag").innerText = newToDo.tag;
   removeForm();
 
