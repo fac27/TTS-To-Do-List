@@ -1,7 +1,7 @@
-import { getFilterMenuOption } from "/handlers.js";
-import { removeTodo } from "/handlers.js";
-import { addTodo } from "/renderers.js";
-import { createTodoTest } from "/tests/index.test.js";
+import { getFilterMenuOption } from "./handlers.js";
+import { removeTodo } from "./handlers.js";
+import { addTodo } from "./renderers.js";
+import { createTodoTest } from "./tests/index.test.js";
 
 if (confirm("Run tests?")) createTodoTest();
 

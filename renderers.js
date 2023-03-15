@@ -1,4 +1,4 @@
-import { createNewTodo, handleCheck } from "/handlers.js";
+import { createNewTodo, handleCheck } from "./handlers.js";
 import { removeForm } from "./script.js";
 // Create new To Do using the object and <template> element and add it do the DOM
 
