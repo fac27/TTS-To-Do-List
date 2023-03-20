@@ -1,7 +1,7 @@
-// import { createNewTodo } from "../handlers.js";
+import { filterToDos } from "../script.js";
 import { test, equal } from "./test-helpers.js";
-//Simon - test 1
 
+// integration tests
 const createTodoTest = () =>
   test("Submitting a new task adds it to the list", () => {
     // Get the object for the values inputted and find the tag to check against the created To Do
@@ -54,6 +54,7 @@ const createTodoTest = () =>
     document.querySelector(`#todo-form`).reset();
 
     testChecked(todoTest);
+    testFilter(element);
     testDelete(todoTest);
   });
 
@@ -66,7 +67,7 @@ const testDelete = (element) =>
     equal(elementExists, true);
 
     // simulate userInput (drag and drop on bin)
-
+    // drag(DragEvent())
     element.remove();
     // ...
 
@@ -74,22 +75,25 @@ const testDelete = (element) =>
     equal(elementExists, false);
   });
 
+// unit test
+
 const testChecked = (element) =>
   test("Checked items are visibly checked", () => {
     equal(element.classList.includes("completed"), false);
-    // simulate user
-    element.querySelector("input[type=checkbox]").checked = true;
-    // handleCheck({ target: element });
-
-    // check todo was checked
+    handleCheck({ target: element });
     equal(element.classList.includes("completed"), true);
+    handleCheck({ target: element });
+    equal(element.classList.includes("completed"), false);
   });
 
-const testFilter = () =>
+const testFilter = (element, filter = "shop") =>
   test("Toggling the filter hides completed tasks from the list", () => {
-    // test goes here
+    filterToDos(filter);
+    equal(element.style.display, "flex");
+    filterToDos("");
+    equal(element.style.display, "flex");
+    filterToDos("work");
+    equal(element.style.display, "none");
   });
-
-// createTodoTest();
 
 export { createTodoTest };

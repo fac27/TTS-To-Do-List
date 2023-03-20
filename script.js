@@ -34,17 +34,14 @@ function showForm(event) {
   console.log("click finish");
 }
 
-function removeForm() {
+export function removeForm() {
   console.log("hide form");
   const form = document.querySelector("#todo-form");
   form.style.display = "none";
   form.reset();
 }
 
-export { removeForm };
-
-export function filterToDos() {
-  const selectedCategory = getFilterMenuOption();
+export function filterToDos(selectedCategory = getFilterMenuOption()) {
   const toDos = document.querySelectorAll(".todo-container > div");
 
   toDos.forEach((toDo) => {
